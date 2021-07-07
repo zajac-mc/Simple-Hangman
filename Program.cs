@@ -25,15 +25,22 @@ namespace Simple_Hangman
 
             string getPair()
         {
+            string para = "Error";
+
             // TODO: Better error handling
             if (!File.Exists(listName))
             {
                 Console.WriteLine("Error");
-                return "ERROR";
+                return para;
             }
+
             int lineCount = File.ReadLines(listName).Count();
-            Console.WriteLine($"Plik ma {lineCount} lini.");
-            return "Para";
+            int linesToSkip = rnd.Next(lineCount);
+            para = File.ReadLines(listName).Skip(linesToSkip).Take(1).First();
+
+
+            Console.WriteLine($"Plik ma {lineCount} lini. Lines to skip = {linesToSkip}");
+            return para;
         }
         }        
     }    
