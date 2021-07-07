@@ -24,9 +24,33 @@ namespace Simple_Hangman
             string capitol = geoPair[1];
             Console.WriteLine(country);
             Console.WriteLine(capitol);
-            
+            displayAsDashes(capitol);
+            // char[] capitolToGuess = capitol.ToCharArray();
+            // foreach(char letter in capitolToGuess)
+            // {
+            //     if (letter != ' ')
+            //     {
+            //         Console.Write(" _ ");
+            //         // Console.Write(letter);
+            //     }
+            //     else Console.Write("   ");
+            // }
             Console.WriteLine("Hello World!");
 
+
+
+            void displayAsDashes(string wordToDash)
+            { 
+                char[] word = wordToDash.ToCharArray();
+                foreach (char letter in word)
+                {
+                    if (letter != ' ')
+                    {
+                        Console.Write(" _ ");
+                    }
+                    else Console.Write("   ");
+                }
+            }
 
 
             string[] getPair()
