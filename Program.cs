@@ -25,16 +25,6 @@ namespace Simple_Hangman
             Console.WriteLine(country);
             Console.WriteLine(capitol);
             displayAsDashes(capitol);
-            // char[] capitolToGuess = capitol.ToCharArray();
-            // foreach(char letter in capitolToGuess)
-            // {
-            //     if (letter != ' ')
-            //     {
-            //         Console.Write(" _ ");
-            //         // Console.Write(letter);
-            //     }
-            //     else Console.Write("   ");
-            // }
             Console.WriteLine("Hello World!");
 
 
