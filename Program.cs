@@ -19,51 +19,55 @@ namespace Simple_Hangman
             string listName = "countries_and_capitals.txt";
             Random rnd = new Random();
 
-            string geoPair = getPair();
-            string[] geoPairArray = geoPair.Split('|');
-            char[] pair = geoPair.ToCharArray();
-            // char[] country;
-            // char[] capital;
-            string country = "";
+            string[] geoPair = getPair();
+            // string[] geoPairArray = geoPair.Split('|');
+            Console.WriteLine(geoPair[0]);
+            Console.WriteLine(geoPair[1]);
+            // char[] pair = geoPair.ToCharArray();
+            // // char[] country;
+            // // char[] capital;
+            // string country = "";
 
-            string getCountry()
-            {
-                pair 
-            }
-            geoPair.
+            // string getCountry()
+            // {
+            //     pair 
+            // }
+            // geoPair.
 
-            bool countryFirst = true;
-            foreach (char letter in pair)
-            {  
-                if (countryFirst)
-                {
-                    country.
-                }
-                Console.WriteLine(letter);
-                while(letter != '|')
-            }
-            Console.WriteLine(geoPair);
+            // bool countryFirst = true;
+            // foreach (char letter in pair)
+            // {  
+            //     if (countryFirst)
+            //     {
+            //         country.
+            //     }
+            //     Console.WriteLine(letter);
+            //     while(letter != '|')
+            // }
+            // Console.WriteLine(geoPair);
             Console.WriteLine("Hello World!");
 
 
 
-            string getPair()
+            string[] getPair()
         {
-            string para = "Error";
-
             // TODO: Better error handling
             if (!File.Exists(listName))
             {
                 Console.WriteLine("Error");
-                return para;
+                string[] err = {"Error"};
+                return err;
             }
 
             int lineCount = File.ReadLines(listName).Count();
             int linesToSkip = rnd.Next(lineCount);
-            para = File.ReadLines(listName).Skip(linesToSkip).Take(1).First();
+            string line = File.ReadLines(listName).Skip(linesToSkip).Take(1).First();
+            string[] pair = line.Split('|');
+            pair[0].Trim();
+            pair[1].Trim();
 
 //            Console.WriteLine($"Plik ma {lineCount} lini. Lines to skip = {linesToSkip}");
-            return para;
+            return pair;
         }
         }        
     }    
