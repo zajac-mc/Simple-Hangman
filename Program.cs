@@ -20,31 +20,11 @@ namespace Simple_Hangman
             Random rnd = new Random();
 
             string[] geoPair = getPair();
-            // string[] geoPairArray = geoPair.Split('|');
-            Console.WriteLine(geoPair[0]);
-            Console.WriteLine(geoPair[1]);
-            // char[] pair = geoPair.ToCharArray();
-            // // char[] country;
-            // // char[] capital;
-            // string country = "";
-
-            // string getCountry()
-            // {
-            //     pair 
-            // }
-            // geoPair.
-
-            // bool countryFirst = true;
-            // foreach (char letter in pair)
-            // {  
-            //     if (countryFirst)
-            //     {
-            //         country.
-            //     }
-            //     Console.WriteLine(letter);
-            //     while(letter != '|')
-            // }
-            // Console.WriteLine(geoPair);
+            string country = geoPair[0];
+            string capitol = geoPair[1];
+            Console.WriteLine(country);
+            Console.WriteLine(capitol);
+            
             Console.WriteLine("Hello World!");
 
 
@@ -63,10 +43,9 @@ namespace Simple_Hangman
             int linesToSkip = rnd.Next(lineCount);
             string line = File.ReadLines(listName).Skip(linesToSkip).Take(1).First();
             string[] pair = line.Split('|');
-            pair[0].Trim();
-            pair[1].Trim();
+            pair[0] = pair[0].Trim();
+            pair[1] = pair[1].Trim();
 
-//            Console.WriteLine($"Plik ma {lineCount} lini. Lines to skip = {linesToSkip}");
             return pair;
         }
         }        
