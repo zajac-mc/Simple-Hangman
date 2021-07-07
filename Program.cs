@@ -9,6 +9,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Simple_Hangman
 {
@@ -24,7 +25,20 @@ namespace Simple_Hangman
             string capitol = geoPair[1];
             Console.WriteLine(country);
             Console.WriteLine(capitol);
+
+            List<char> usedLetters = new List<char>();
+
+            Console.WriteLine(usedLetters.Count);
+            usedLetters.Add('a');            
+            Console.WriteLine(usedLetters.Count);            
+            Console.WriteLine(usedLetters.Last());
+            usedLetters.Add('b');
+            usedLetters.Add('o');
+            usedLetters.Add('e');
+            usedLetters.Add('i');
             displayAsDashes(capitol);
+
+            
             Console.WriteLine("Hello World!");
 
 
@@ -34,9 +48,22 @@ namespace Simple_Hangman
                 char[] word = wordToDash.ToCharArray();
                 foreach (char letter in word)
                 {
+                    bool used = false;
                     if (letter != ' ')
                     {
-                        Console.Write(" _ ");
+                        for (int i = 0; i < usedLetters.Count; i++)
+                        {
+                            if (letter == usedLetters[i])
+                            {
+                                used = true;
+                            }
+                        }
+
+                        if (used)
+                        {
+                            Console.Write($" {letter} ");
+                        }
+                        else Console.Write(" _ ");
                     }
                     else Console.Write("   ");
                 }
