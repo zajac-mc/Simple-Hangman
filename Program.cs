@@ -8,7 +8,7 @@
 
 using System;
 using System.IO;
-
+using System.Linq;
 
 namespace Simple_Hangman
 {
@@ -31,7 +31,8 @@ namespace Simple_Hangman
                 Console.WriteLine("Error");
                 return "ERROR";
             }
-            Console.WriteLine("Para");
+            int lineCount = File.ReadLines(listName).Count();
+            Console.WriteLine($"Plik ma {lineCount} lini.");
             return "Para";
         }
         }        
