@@ -19,9 +19,33 @@ namespace Simple_Hangman
             string listName = "countries_and_capitals.txt";
             Random rnd = new Random();
 
+            string geoPair = getPair();
+            string[] geoPairArray = geoPair.Split('|');
+            char[] pair = geoPair.ToCharArray();
+            // char[] country;
+            // char[] capital;
+            string country = "";
 
-            Console.WriteLine(getPair());
+            string getCountry()
+            {
+                pair 
+            }
+            geoPair.
+
+            bool countryFirst = true;
+            foreach (char letter in pair)
+            {  
+                if (countryFirst)
+                {
+                    country.
+                }
+                Console.WriteLine(letter);
+                while(letter != '|')
+            }
+            Console.WriteLine(geoPair);
             Console.WriteLine("Hello World!");
+
+
 
             string getPair()
         {
@@ -38,8 +62,7 @@ namespace Simple_Hangman
             int linesToSkip = rnd.Next(lineCount);
             para = File.ReadLines(listName).Skip(linesToSkip).Take(1).First();
 
-
-            Console.WriteLine($"Plik ma {lineCount} lini. Lines to skip = {linesToSkip}");
+//            Console.WriteLine($"Plik ma {lineCount} lini. Lines to skip = {linesToSkip}");
             return para;
         }
         }        
